@@ -1,0 +1,29 @@
+<odoo>
+	<record id="category_mdrs_base" model="ir.module.category">
+		<field name="name">Mdrs base</field>
+		<field name="description">therapeutic exercice category</field>
+	</record>
+
+	<record id="group_mdrs_patient" model="res.groups">
+		<field name="name">Paciente</field>
+		<field name="category_id" ref="category_mdrs_base"/>
+        <field name="implied_ids" eval="[(6, 0, [ref('base.group_private_addresses'), ref('base.group_user')])]"/>
+	</record>
+
+	<record id="group_mdrs_admin" model="res.groups">
+		<field name="name">Administrador</field>
+		<field name="category_id" ref="category_mdrs_base"/>
+        <field name="implied_ids" eval="[(7, ref('group_mdrs_patient'))]"/>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+	</record>
+
+	<record id="group_mdrs_profesional" model="res.groups">
+		<field name="name">Profesional</field>
+		<field name="category_id" ref="category_mdrs_base"/>
+	</record>
+
+	<record id="group_mdrs_secretary" model="res.groups">
+		<field name="name">Secretaria</field>
+		<field name="category_id" ref="category_mdrs_base"/>
+	</record>
+</odoo>
