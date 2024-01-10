@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- Raiz -->
+    <menuitem id="html_editor_root" name="HTML"/>
+
+    <menuitem id="html_editor" name="HTML" parent="html_editor_root" action="html_editor_action_view"/>
+</odoo>
